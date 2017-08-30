@@ -13,6 +13,8 @@ export default class Form extends React.Component {
             extractEnrichments: false,
             extractCover: false,
             extractAnnexes: false,
+            extractMetadataXml: false,
+            extractMetadataMods: false,
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -77,6 +79,30 @@ export default class Form extends React.Component {
                                 checked={this.state.extractMetadata}
                                 onChange={this.handleInputChange}
                             />
+                        </div>
+                        <div className="col-sm-offset-2 form-group">
+                            <div className="checkbox">
+                                <label htmlFor="extractMetadataXml" className="col-sm-1">XML</label>
+                                <input
+                                    className="col-sm-1"
+                                    type="checkbox"
+                                    id="extractMetadataXml"
+                                    name="extractMetadataXml"
+                                    checked={this.state.extractMetadataXml}
+                                    onChange={this.handleInputChange}
+                                />
+                            </div>
+                            <div className="checkbox">
+                                <label htmlFor="extractMetadataMods" className="col-sm-1">MODS</label>
+                                <input
+                                    className="col-sm-1"
+                                    type="checkbox"
+                                    id="extractMetadataMods"
+                                    name="extractMetadataMods"
+                                    checked={this.state.extractMetadataMods}
+                                    onChange={this.handleInputChange}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
