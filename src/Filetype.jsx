@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Format from './Format.jsx';
+import Format from './Format';
 
 export default class Filetype extends React.Component {
 
@@ -12,6 +12,9 @@ export default class Filetype extends React.Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
+        this.formats = this.props.formats
+            .map((format, n) => <Format label={this.props.label[n]} format={format} />);
     }
 
     handleInputChange(event) {
@@ -36,10 +39,7 @@ export default class Filetype extends React.Component {
                     onChange={this.handleInputChange}
                 />
                 <div>
-                    <Format
-                        format={this.props.formats[0]}
-                        label={this.props.labels[0]}
-                    />
+                    {this.formats}
                 </div>
             </div>
         );
